@@ -3,7 +3,7 @@ pygame.init()
 
 win = pygame.display.set_mode((1020,600))
 pygame.display.set_caption("The Maze")
-
+prize=pygame.image.load("Prize.png")
 
 logo=pygame.image.load("Logo.png")
 pygame.display.set_icon(logo)
@@ -11,10 +11,10 @@ pygame.display.set_icon(logo)
 wall=pygame.image.load("Block.jpg")
 
 clock=pygame.time.Clock()
-x = 5
-y = 25
-rad=5
-vel = 5
+x = 10
+y = 30
+rad=6
+vel = 10
 
 def maze():
     mazelist=['XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
@@ -62,8 +62,8 @@ def gamewindow():
     win.fill((211,211,211))
     maze()
 
-    pygame.draw.rect(win,(0,0,255),(0,20,20,20))
-    pygame.draw.rect(win,(0,255,0),(1000,560,20,20))
+    pygame.draw.rect(win,(0,255,0),(0,20,20,20))
+    win.blit(prize,(1000,560))
     
     pygame.draw.circle(win,(255,0,0),(x,y),rad)
     pygame.display.update() 
