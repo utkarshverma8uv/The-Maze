@@ -1,7 +1,7 @@
 import pygame
 pygame.init()
 
-win = pygame.display.set_mode((1000,600))
+win = pygame.display.set_mode((1020,600))
 pygame.display.set_caption("The Maze")
 
 
@@ -14,39 +14,39 @@ clock=pygame.time.Clock()
 x = 5
 y = 25
 rad=5
-vel = 10
+vel = 5
 
 def maze():
-    mazelist=['XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                X',
-              'X                                                 ',
-              'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    mazelist=['XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+              'X X   X   X   X   X   X   X   X   X   X   X   X   X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X X X X X X X X X X X X X X X X X X X X X X X X X X',
+              'X   X   X   X   X   X   X   X   X   X   X   X   X  ',
+              'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 
               ]
 
@@ -63,7 +63,7 @@ def gamewindow():
     maze()
 
     pygame.draw.rect(win,(0,0,255),(0,20,20,20))
-    pygame.draw.rect(win,(0,255,0),(980,560,20,20))
+    pygame.draw.rect(win,(0,255,0),(1000,560,20,20))
     
     pygame.draw.circle(win,(255,0,0),(x,y),rad)
     pygame.display.update() 
@@ -83,7 +83,7 @@ while running:
     if keys[pygame.K_LEFT] and x > vel:  # Making sure the top left position of our character is greater than our vel so we never move off the screen.
         x -= vel
 
-    if keys[pygame.K_RIGHT] and x < 1000-rad-vel:  # Making sure the top right corner of our character is less than the screen width - its width 
+    if keys[pygame.K_RIGHT] and x < 1020-rad-vel:  # Making sure the top right corner of our character is less than the screen width - its width 
         x += vel
 
     if keys[pygame.K_UP] and y > vel:  # Same principles apply for the y coordinate
